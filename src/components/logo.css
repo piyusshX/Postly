@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');@import url('https://fonts.googleapis.com/css?family=Bangers|Cinzel:400,700,900|Lato:100,300,400,700,900|Lobster|Lora:400,700|Mansalva|Muli:200,300,400,600,700,800,900|Open+Sans:300,400,600,700,800|Oswald:200,300,400,500,600,700|Roboto:100,300,400,500,700,900&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+}
+h3, p{
+  margin:0px;
+  padding:0px;
+}
+
+.logo-holder{
+  text-align:center;
+}
+
+.logo-4 h3 {
+    color: #111;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 0.65;
+    font-family: 'Lobster', cursive;
+}
+
+.logo-5 h3 {
+    color: #111;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 0.6;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 5px;
+}
+.logo-5 p {
+    font-size: 14px;
+    margin-left: 0;
+    color: #545454;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-style: italic;
+    font-family: 'Mansalva', cursive;
+    position: relative;
+}
+.logo-5 p:before {
+    position: absolute;
+    content: '';
+    width: 17px;
+    height: 12px;
+    background: #545454;
+    left: 0px;
+    top: 5px;
+}
+.logo-5 p:after {
+    position: absolute;
+    content: '';
+    width: 17px;
+    height: 12px;
+    background: #545454;
+    right: 0px;
+    top: 5px;
+}
+
+@-webkit-keyframes ring{0%{-webkit-transform:rotate(-15deg);transform:rotate(-15deg)}2%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}4%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}6%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}8%{-webkit-transform:rotate(-22deg);transform:rotate(-22deg)}10%{-webkit-transform:rotate(22deg);transform:rotate(22deg)}12%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}14%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}16%{-webkit-transform:rotate(-12deg);transform:rotate(-12deg)}18%{-webkit-transform:rotate(12deg);transform:rotate(12deg)}100%,20%{-webkit-transform:rotate(0);transform:rotate(0)}}@keyframes ring{0%{-webkit-transform:rotate(-15deg);transform:rotate(-15deg)}2%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}4%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}6%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}8%{-webkit-transform:rotate(-22deg);transform:rotate(-22deg)}10%{-webkit-transform:rotate(22deg);transform:rotate(22deg)}12%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}14%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}16%{-webkit-transform:rotate(-12deg);transform:rotate(-12deg)}18%{-webkit-transform:rotate(12deg);transform:rotate(12deg)}100%,20%{-webkit-transform:rotate(0);transform:rotate(0)}}
