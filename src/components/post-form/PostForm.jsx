@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
-import { Button, Input, Select, RTE } from "../index"
+import { Button, Select, Input, RTE } from "../index"
+import PostInput from './PostInput'
 import service from '../../appwrite/config'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -88,33 +89,31 @@ function PostForm({post, slug}) {
     }, [watch, slugTransform, setValue])
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
-                <Input
-                    label="Title :"
-                    placeholder="Title"
-                    className="mb-4"
-                    {...register("title", { required: true })}
-                />
-                <Input
-                    label="Slug :"
+        <form onSubmit={handleSubmit(submit)} className="">
+            <Input
+                    label=""
                     placeholder="Slug"
-                    className="mb-4"
+                    className="hidden"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
-            </div>
-            <div className="w-1/3 px-2">
-                <Input
+            <div className="grid grid-cols-2 gap-x-2">
+                <PostInput
+                    label="Title :"
+                    placeholder="Title"
+                    className="mb-4 col-span-1"
+                    {...register("title", { required: true })}
+                />
+                <PostInput
                     label="Featured Image :"
                     type="file"
-                    className="mb-4"
+                    className="mb-4 col-span-1"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image")}
                 />
+                
                 {post && (
                     <div className="w-full mb-4">
                         <img
@@ -124,15 +123,23 @@ function PostForm({post, slug}) {
                         />
                     </div>
                 )}
-                <Select
-                    options={["active", "inactive"]}
-                    label="Status"
-                    className="mb-4"
-                    {...register("status", { required: true })}
-                />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
-                    {post ? "Update" : "Submit"}
-                </Button>
+                <div className='col-span-2'>
+                    <Select
+                        options={["active", "inactive"]}
+                        label="Status"
+                        className="mb-4 "
+                        {...register("status", { required: true })}
+                    />
+                </div>
+                <div className="col-span-2">
+                    <div className=''>
+                        <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                    </div>
+                    <Button type="submit" className="w-full bg-[#18BED4] mt-3">
+                        {post ? "Update" : "Submit"}
+                    </Button>
+                </div>
+                
             </div>
         </form>
     )

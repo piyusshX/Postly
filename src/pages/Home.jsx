@@ -30,7 +30,7 @@ function Home() {
     } 
     console.log(posts)
     return (
-        <div className='w-full py-8'>
+        <div className='w-full py-28'>
             <Container>
                 <div className='flex flex-wrap min-h-[60vh]'>
                     {posts.map((post) => (

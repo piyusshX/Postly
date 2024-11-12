@@ -5,7 +5,7 @@ import conf from '../conf/conf'
 function AddPost() {
 
   return (
-    <div className='py-8'>
+    <div className='pt-32 pb-20'>
         
         <Container>
             <PostForm />

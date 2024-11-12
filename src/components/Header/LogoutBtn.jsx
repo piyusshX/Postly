@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import authService from '../../appwrite/auth'
 import {logout} from '../../store/authSlice'
+import './header.css'
 
 function LogoutBtn() {
 
@@ -13,9 +14,10 @@ function LogoutBtn() {
     }
     return (
         <button 
-            className='inline-block px-6 py-2 border-none duration-200 mr-4 bg-[#F1F1F2] text-black hover:bg-[#CEE6F2] rounded-full'
+            className='nav-items bg-transparent text-[#ffffff] hover:text-[#C5C6C7] transition-colors duration-200 group'
             onClick={logoutHandler} >
             Logout
+            <div className="w-full h-[1.5px] bg-[#1F2833] cursor-pointer group-hover:bg-[#C5C6C7] transition-colors duration-200"></div>
         </button>
     )
 }

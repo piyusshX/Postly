@@ -1,8 +1,9 @@
 import React from 'react'
-import { Container, Logo, LogoutBtn } from '../index'
+import { Container, LogoutBtn } from '../index'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-
+import Logo from './Logo'
+import './header.css'
 
 function Header() {
 
@@ -38,22 +39,22 @@ function Header() {
   ]
 
   return (
-    <header className='py-3 shadow bg-[#1995AD]'>
-      <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
+    <header className='w-full top-0 left-0 right-0 bg-[#1F2833] fixed z-50 '>
+        <nav className='flex justify-between items-center py-7 px-20'>
+          <div className=''>
             <Link to='/'>
-              <Logo width='70px'   />
-
-              </Link>
+              <Logo  />
+            </Link>
           </div>
-          <ul className='flex ml-auto'>
+          <ul className='flex'>
             {navItems.map((item) => item.active ? (
               <li key={item.name}>
                 <button
                   onClick={() => navigate(item.slug)}
-                  className='inline-block px-6 py-2 border-none duration-200 mr-4 bg-[#F1F1F2] text-black hover:bg-[#CEE6F2] rounded-full'
-                >{item.name}</button>
+                  className='nav-items bg-transparent mr-24 text-[#ffffff] hover:text-[#C5C6C7] transition-colors duration-200 group'
+                >{item.name}
+                  <div className="w-full h-[1.5px] bg-[#1F2833] cursor-pointer group-hover:bg-[#C5C6C7] transition-colors duration-200"></div>
+                </button>
               </li>
             ) : null
             )}
@@ -68,7 +69,7 @@ function Header() {
             )}
           </ul>
         </nav>
-      </Container>
+        <div className='w-[93%] h-[1.5px] bg-[#C5C6C7] mx-auto'></div>
     </header>
   )
 }
